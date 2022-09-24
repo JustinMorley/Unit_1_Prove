@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace MyApp // Note: actual namespace depends on the project name.
+namespace MyApp // Justin Morley: Unit 1 Prove (Tic Tac Toe)
 {
     internal class Program
     {
@@ -36,6 +36,7 @@ namespace MyApp // Note: actual namespace depends on the project name.
 
          static void playerTurn(List<string> board, string currentPlayer)
         {
+            // Executes the players turn
             Console.Write($"{currentPlayer}'s turn to choose a square (1-9): ");
             string move_string = Console.ReadLine();
             int choice = int.Parse(move_string);
@@ -45,6 +46,7 @@ namespace MyApp // Note: actual namespace depends on the project name.
 
         static string playerChange(string currentPlayer)
         {
+            // changes which players turn it is
             string nextPlayer = "x";
 
             if(currentPlayer == "x")
