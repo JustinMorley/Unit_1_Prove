@@ -10,7 +10,7 @@ namespace MyApp // Justin Morley: Unit 1 Prove (Tic Tac Toe)
             showBoard(numbers);
             string player = "x";
             int turn = 1;
-            while (turn < 9)
+            while (turn < 10 && IsWinner(numbers, "x") == false && IsWinner(numbers, "o") == false)
             {
                 playerTurn(numbers, player);
                 showBoard(numbers);
@@ -54,6 +54,26 @@ namespace MyApp // Justin Morley: Unit 1 Prove (Tic Tac Toe)
                 nextPlayer = "o";
             }
             return nextPlayer;
+        }
+
+        static bool IsWinner(List<string> board, string player)
+        {
+            bool isWinner = false;
+
+            if ((board[0] == player && board[1] == player && board[2] == player)
+                || (board[3] == player && board[4] == player && board[5] == player)
+                || (board[6] == player && board[7] == player && board[8] == player)
+                || (board[0] == player && board[3] == player && board[6] == player)
+                || (board[1] == player && board[4] == player && board[7] == player)
+                || (board[2] == player && board[5] == player && board[8] == player)
+                || (board[0] == player && board[4] == player && board[8] == player)
+                || (board[2] == player && board[4] == player && board[6] == player)
+                )
+            {
+                isWinner = true;
+            }
+
+            return isWinner; 
         }
     }
 }
